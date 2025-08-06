@@ -29,7 +29,7 @@ Collection of custom tools to migrate data between account and/or Immich instanc
   - immich.import.config
 4. Build the docker image
    ```
-    docker build -f dockerfile  -t immich-migrate-tools .
+   docker build -f dockerfile  -t immich-migrate-tools .
     ```
 
 ### immich.export.config
@@ -51,6 +51,52 @@ apiKey=bIln15UFJwZrKJy9TeNK8BASO7t4IS9Fmof8YByd9s
 ```
 
 ## Executing
+
+Base command line execution of included scripts is:
+```docker compose -f run/docker-compose.yml run --rm shell [program function] [arguments]```
+
+### Common Arguments
+- -c configuration_file 
+- -configFile configuration_file
+  - immich.*config file containing immich connection information
+  - optional if using default names
+- -test
+  - Do not make changes on import-* functions. i.e. a dry run
+  - optional
+- f
+- fileName
+- fileIn
+- fileOut
+  - file to process for either export (outOut) or import (fileName). sorry for the lack of consistancy :(
+  - optional if using default names
+- a
+- albumName
+  - album name when appropiate
+  - must supply one
+  - use multipe -a 'albumname' as needed
+- f
+- filter
+  -  filter for originalPath attribute when appropiate
+ 
+### Executing
+
+#### export.people
+~~~docker compose -f run/docker-compose.yml run --rm shell export.people [-c config_file] [-f people.export]~~~ 
+#### import.people
+~~~docker compose -f run/docker-compose.yml run --rm shell import.people [-c config_file] [-f people.export]~~~ 
+
+#### export.albums
+~~~docker compose -f run/docker-compose.yml run --rm shell export.albums [-c config_file] -a 'albumname 1' [-a 'albumename 2] [-f album.export]~~~ 
+#### import.albums
+~~~docker compose -f run/docker-compose.yml run --rm shell import.albums [-c config_file] [-f album.export]~~~ 
+
+#### export.assets
+~~~docker compose -f run/docker-compose.yml run --rm shell export.assets [-c config_file] -a 'albumname 1' [-o assets.export]~~~ 
+*Note:* To import run ***import.albums -f assets.export***
+
+#### export.asset.info.2.xmp
+~~~docker compose -f run/docker-compose.yml run --rm shell export.asset.info.2.xmp [-c config_file]  -a 2024-04-01 -b 2024-12-31~~~ 
+
 
 ## Testing
 
