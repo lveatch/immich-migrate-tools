@@ -16,10 +16,14 @@ RUN mkdir -p /app/scripts && \
     mkdir -p /app/external
 #
 ADD https://github.com/lveatch/immich-migrate-tools/raw/refs/heads/main/assets/docker/export.albums /app/scripts
-ADD https://github.com/lveatch/immich-migrate-tools/raw/refs/heads/main/assets/docker/export.asset.info.2.xmp /app/scripts
-ADD https://github.com/lveatch/immich-migrate-tools/raw/refs/heads/main/assets/docker/export.people /app/scripts
 ADD https://github.com/lveatch/immich-migrate-tools/raw/refs/heads/main/assets/docker/import.albums /app/scripts
+#
+ADD https://github.com/lveatch/immich-migrate-tools/raw/refs/heads/main/assets/docker/export.people /app/scripts
 ADD https://github.com/lveatch/immich-migrate-tools/raw/refs/heads/main/assets/docker/import.people /app/scripts
+#
+ADD https://github.com/lveatch/immich-migrate-tools/raw/refs/heads/main/assets/docker/export.asset.info.2.xmp /app/scripts
+#
+ADD https://github.com/lveatch/immich-migrate-tools/raw/refs/heads/main/assets/docker/export.assets /app/scripts
 #
 ENV TZ=America/New_York
 ENV PATH="/app/scripts:$PATH"
