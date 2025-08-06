@@ -6,35 +6,9 @@ RUN apk update \
     && apk add curl \
                openssl \
                openssl-dev \
-               gcc \
-               make \
-               perl \
-               perl-app-cpanminus \
-               #
-               perl-b-cow \
-               perl-clone \
-               perl-http-message \
-               perl-http-cookies \
-               perl-http-daemon \
-               perl-http-negotiate \
-               perl-libwww \
-               perl-lwp-protocol-https \
-               #
                 perl-par \
                 perl-par-packer \
-               #
-               perl-date-calc \
-               perl-json \
-               perl-json-maybexs \
-               perl-getopt-long \
-               perl-image-exiftool \
     && rm -rf /var/cache/apk/* \
-    #
-    && /usr/bin/cpanm LWP::UserAgent \
-                      File::Copy \
-                      URI::Heuristic \
-                      HTTP::Request \
-   && rm -rf /root/.cpanm/*
 #
 RUN mkdir -p /app/scripts && \
     mkdir -p /app/conf && \
