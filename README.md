@@ -33,7 +33,10 @@ Collection of custom tools to migrate data between account and/or Immich instanc
 3. Edit the configuration files setting your http://immich:2283 sever name and appropiate API keys. This must connect to your reverse proxy or execute from another docker host other than your Immich docker host.
   - immich.export.config
   - immich.import.config
-4. Build the docker image
+4. Make the following sub-directories
+    - ./config
+    - ./data
+5. Build the docker image
    ```
    docker build -f dockerfile  -t immich-migrate-tools .
     ```
