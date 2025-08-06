@@ -27,6 +27,7 @@ RUN apk update \
                perl-json \
                perl-json-maybexs \
                perl-getopt-long \
+               perl-image-exiftool \
     && rm -rf /var/cache/apk/* \
     #
     && /usr/bin/cpanm LWP::UserAgent \
