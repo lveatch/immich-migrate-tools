@@ -2,8 +2,8 @@ services:
   shell: 
     image: immich-migrate-tools:latest
     volumes:
-      - /home/len/docker.image/immich-migrate-tools/config:/app/conf
-      - /home/len/docker.image/immich-migrate-tools/data:/app/data
+      - /home/user/immich-migrate-tools/config:/app/conf
+      - /home/user/immich-migrate-tools/data:/app/data
       - /mnt:/app/external/mnt
     working_dir: /app/scripts
     command: /bin/sh
