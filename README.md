@@ -30,7 +30,7 @@ Collection of custom tools to migrate data between account and/or Immich instanc
 ## Installing
 1. Download dockerfile and docker-compose.yml found under assets/docker
 2. Copy the immich.export.config and immich.import.config contents from below
-3. Edit the configuration files setting your http://immich:2283 sever name and appropiate API keys. This must connect to your reverse proxy or execute from another docker host other than your Immich docker host.
+3. Edit the configuration files setting your http://immich.domain.tld:2283 sever name and appropiate API keys. This must connect to your reverse proxy or execute from another docker host other than your Immich docker host.
   - immich.export.config
   - immich.import.config
 4. Make the following sub-directories
