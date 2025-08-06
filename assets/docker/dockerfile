@@ -8,7 +8,7 @@ RUN apk update \
                openssl-dev \
                 perl-par \
                 perl-par-packer \
-    && rm -rf /var/cache/apk/* \
+    && rm -rf /var/cache/apk/* 
 #
 RUN mkdir -p /app/scripts && \
     mkdir -p /app/conf && \
