@@ -120,8 +120,8 @@ docker compose -f docker-compose.yml run --rm shell export.assets [-c config_fil
 docker compose -f docker-compose.yml run --rm shell export.asset.info.2.xmp [-c config_file]  -a 2024-04-01 -b 2024-12-31
 ~~~
 > *Notes:*
-> If `-a` is not supplied, defaults to -8 days from now.
-> If `-b` is not supplied, defaults to -1 hour from now. This is useful for background scheduling to keep sidecar files updated.
+> If `-a (after date)` is not supplied, defaults to -8 days from now.
+> If `-b (before date)` is not supplied, defaults to -1 hour from now. This is useful for background scheduling to keep sidecar files updated.
 
 
 ## Testing
