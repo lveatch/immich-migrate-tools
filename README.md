@@ -12,9 +12,10 @@ Collection of custom tools to migrate data between account and/or Immich instanc
     - This can be between two accounts on the same instance or seperate instances. Matching between accounts is done on asset name and created date/time (fileCreatedAt) attribute as determined by Immich with the hopes of dealing with possible duplicate asset names. Assets must be previsous imported into Immich and all jobs must be complete before importing.
     - export.albums
     - import.albums
-3. Export metadata from assets to Sidecar (XMP) files.
+3. Export metadata from external library only assets to Sidecar (XMP) files.
     - Exports Place, Faces, People to the photos xmp sidecar file.
     - export.asset.info.2.xmp
+    - Volume `/mnt:/app/external/mnt` is where your external library is located.
 4. Exports assets filtered on the originalPath attribute to assign asset to existing album.
     - export.assets
 
