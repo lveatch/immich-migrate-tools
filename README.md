@@ -113,12 +113,15 @@ docker compose -f docker-compose.yml run --rm shell import.albums [-c config_fil
 ~~~
 docker compose -f docker-compose.yml run --rm shell export.assets [-c config_file] -f 'originalPath_search_text' -a 'albumname 1' [-o assets.export]
 ~~~ 
-*Note:* To import run ***import.albums -f assets.export***
+> *Note:* To import run ***import.albums -f assets.export***
 
 #### export.asset.info.2.xmp
 ~~~
 docker compose -f docker-compose.yml run --rm shell export.asset.info.2.xmp [-c config_file]  -a 2024-04-01 -b 2024-12-31
-~~~ 
+~~~
+> *Notes:*
+> If `-a` is not supplied, defaults to -8 days from now.
+> If `-b` is not supplied, defaults to -1 hour from now. This is useful for background scheduling to keep sidecar files updated.
 
 
 ## Testing
