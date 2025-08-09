@@ -8,18 +8,19 @@ Collection of custom tools to migrate data between account and/or Immich instanc
     - This can be between two accounts on the same instance or seperate instances. Matching between accounts is done on asset name. I did not have any issues with duplicate asset names as the face match is based on the position (the square) of the face detected.
     - Please note that faces which are unassigned will not be matched.
     - You will need to manually merge people. Duplicates and the number of duplicate names are listed at the end of the output.
-    - export.people
-    - import.people
+        - export.people
+        - import.people
 1. Exports / Imports album assets from one immich account to another account.
     - This can be between two accounts on the same instance or seperate instances. Matching between accounts is done on asset name and created date/time (fileCreatedAt) attribute as determined by Immich with the hopes of dealing with possible duplicate asset names. Assets must be previsous imported into Immich and all jobs must be complete before importing.
-    - export.albums
-    - import.albums
+        - export.albums
+        - import.albums
 2. Export metadata from external library only assets to Sidecar (XMP) files.
     - Exports Place, Faces, People to the photos xmp sidecar file.
-    - export.asset.info.2.xmp
-    - Volume `/mnt:/app/external/mnt` is where your external library is located.
+        - export.asset.info.2.xmp
+        - Volume `/mnt:/app/external/mnt` is where your external library is located.
 3. Exports assets filtered on the originalPath attribute to assign asset to existing album.
-    - export.assets
+    - To import run `import.albums -f assets.export`
+        - export.assets
 
 ## Requirements:
 - Each immich account requires an api key
